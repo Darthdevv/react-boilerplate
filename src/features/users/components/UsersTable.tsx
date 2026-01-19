@@ -1,6 +1,6 @@
 import { useUsers } from '../hooks/useUsers';
 import { useTranslation } from 'react-i18next';
-import { UsersSkeleton } from './UsersSkeleton1';
+import { UsersSkeleton } from './UsersSkeleton';
 
 export const UsersTable = () => {
   const { t } = useTranslation();
