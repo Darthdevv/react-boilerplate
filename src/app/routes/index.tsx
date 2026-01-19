@@ -1,19 +1,22 @@
 import { createBrowserRouter } from 'react-router-dom';
-import App from '@/app/App';
+import { DashboardPage } from '@/features/dashboard/pages/DashboardPage';
 import { UsersPage } from '@/features/users/pages/UsersPage';
-import { NotFound } from '@/shared/components/fallback/NotFoundPage.tsx';
-import { ErrorPage } from '@/shared/components/fallback/ErrorPage.tsx';
+import { NotFound } from '@/shared/components/fallback/NotFoundPage';
+import { ErrorPage } from '@/shared/components/fallback/ErrorPage';
+import { LayoutWrapper } from '@/shared/components/layout/LayoutWrapper';
 
 export const router = createBrowserRouter([
   {
+    path: '/',
+    element: <LayoutWrapper />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
-        element: <App />,
+        index: true,
+        element: <DashboardPage />,
       },
       {
-        path: '/users',
+        path: 'users',
         element: <UsersPage />,
       },
       {

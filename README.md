@@ -4,45 +4,51 @@ A modern, production-ready React boilerplate built with Vite, TypeScript, and Ta
 
 ## 🚀 Tech Stack
 
--   **Core**: [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
--   **Build Tool**: [Vite](https://vitejs.dev/)
--   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
--   **State Management**: [Zustand](https://github.com/pmndrs/zustand)
--   **Data Fetching**: [TanStack Query (React Query)](https://tanstack.com/query/latest)
--   **Routing**: [React Router v7](https://reactrouter.com/)
--   **Internationalization**: [i18next](https://www.i18next.com/)
--   **HTTP Client**: [Axios](https://axios-http.com/)
--   **Mocking**: [JSON Server](https://github.com/typicode/json-server)
+- **Core**: [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+- **Data Fetching**: [TanStack Query (React Query)](https://tanstack.com/query/latest)
+- **Routing**: [React Router v7](https://reactrouter.com/)
+- **Internationalization**: [i18next](https://www.i18next.com/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) with Dark Mode support
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **HTTP Client**: [Axios](https://axios-http.com/)
+- **Mocking**: [JSON Server](https://github.com/typicode/json-server)
 
 ## 🛠️ Prerequisites
 
--   Node.js (v18 or higher)
--   npm or yarn
+- Node.js (v18 or higher)
+- npm or yarn
 
 ## 📦 Installation & Running
 
 1.  **Clone the repository:**
+
     ```bash
     git clone <repository-url>
     cd ft-react-boilerplate
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 
 3.  **Start the Mock Server (for API simulation):**
+
     ```bash
     npm run server
     ```
-    *Runs on port 8080*
+
+    _Runs on port 8080_
 
 4.  **Start the Development Server:**
     ```bash
     npm run dev
     ```
-    *Runs on port 5173*
+    _Runs on port 5173_
 
 ## 📂 Project Structure
 
@@ -55,9 +61,12 @@ src/
 │   ├── providers/       # Global providers (Query, Router, etc.)
 │   └── routes/          # Route definitions
 ├── features/            # Feature-specific modules
+│   ├── dashboard/       # Dashboard Feature
+│   │   ├── components/  # Dashboard widgets
+│   │   └── pages/       # Dashboard entry
 │   └── users/           # Example feature: Users
 │       ├── api/         # API calls
-│       ├── components/  # Feature-specific components
+│       ├── components/  # Feature-specific components (Table, Skeleton)
 │       ├── hooks/       # Custom hooks (e.g., useUsers)
 │       ├── pages/       # Page components
 │       └── types/       # TypeScript interfaces
@@ -71,10 +80,10 @@ src/
 
 ## ✨ Key Features
 
--   **Internationalization (i18n)**: Built-in support for multiple languages (English & Arabic).
--   **Mock API**: Integrated `json-server` for rapid prototyping.
--   **Type Safety**: Strict TypeScript configuration.
--   **Modern Styling**: Utility-first CSS with Tailwind.
+- **Internationalization (i18n)**: Built-in support for multiple languages (English & Arabic).
+- **Mock API**: Integrated `json-server` for rapid prototyping.
+- **Type Safety**: Strict TypeScript configuration.
+- **Modern Styling**: Utility-first CSS with Tailwind.
 
 ## 📏 Extension Rules
 
@@ -86,8 +95,8 @@ src/
 
 ## 📝 Scripts
 
--   `npm run dev`: Start dev server
--   `npm run build`: Build for production
--   `npm run preview`: Preview production build
--   `npm run server`: Start mock API server
--   `npm run lint`: Run ESLint
+- `npm run dev`: Start dev server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run server`: Start mock API server
+- `npm run lint`: Run ESLint

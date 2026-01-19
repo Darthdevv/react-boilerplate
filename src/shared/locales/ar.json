@@ -1,12 +1,19 @@
 {
+  "app": {
+    "name": "قالب React"
+  },
   "common": {
     "error": "حدث خطأ ما",
     "errorDescription": "حدث خطأ ما. يرجى المحاولة مرة أخرى",
     "notFound": "الصفحة غير موجودة",
-    "backHome": "العودة للرئيسية"
+    "backHome": "العودة للرئيسية",
+    "switchLanguage": "تغيير اللغة",
+    "switchToAr": "التبديل إلى العربية",
+    "switchToEn": "التبديل إلى الإنجليزية",
+    "toggleTheme": "تبديل المظهر"
   },
   "home": {
-    "title": "قالب رياكت",
+    "title": "الرئيسية",
     "description": "هذا تطبيق رياكت حديث مبني باستخدام Vite و TypeScript و Tailwind CSS.\nاضغط أدناه لعرض قائمة المستخدمين والتحقق من جلب البيانات.",
     "viewUsers": "عرض المستخدمين"
   },
@@ -16,5 +23,23 @@
     "error": "فشل تحميل المستخدمين.",
     "name": "الاسم",
     "email": "البريد الإلكتروني"
+  },
+  "dashboard": {
+    "welcome": "أهلاً بك مجدداً!",
+    "subtitle": "إليك آخر التحديثات لمشاريعك اليوم.",
+    "activeUsers": "المستخدمين النشطين",
+    "revenue": "الإيرادات",
+    "bounceRate": "معدل الارتداد",
+    "serverLoad": "حمل الخادم",
+    "recentActivity": "النشاط الأخير",
+    "systemStatus": "حالة النظام",
+    "cpuUsage": "استخدام وحدة المعالجة المركزية",
+    "memoryUsage": "استخدام الذاكرة",
+    "storageUsage": "مساحة القرص",
+    "newUserJoined": "انضمام مستخدم جديد",
+    "justNow": "الآن"
+  },
+  "footer": {
+    "rightsReserved": "جميع الحقوق محفوظة"
   }
 }

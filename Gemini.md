@@ -9,12 +9,15 @@ This is production-ready React TS boilerplate designed for scalability, performa
 ## 🏗️ Architecture Philosophy
 
 ### Feature-Based Structure
+
 The project follows a **Feature-Based Architecture** pattern where:
+
 - Each feature is self-contained with its own components, API calls, hooks, types, and pages
 - Features are isolated modules that can be developed, tested, and maintained independently
 - Shared code is centralized to avoid duplication
 
 ### Design Principles
+
 1. **Separation of Concerns**: App-level configuration vs. feature-specific logic vs. shared utilities
 2. **Type Safety**: Strict TypeScript throughout
 3. **Scalability**: Easy to add new features without affecting existing ones
@@ -25,28 +28,41 @@ The project follows a **Feature-Based Architecture** pattern where:
 ## 📦 Technology Stack
 
 ### Core Technologies
+
 - **React 19**: Latest React with modern features
 - **TypeScript**: Full type safety across the application
 - **Vite**: Lightning-fast build tool and dev server
 
 ### UI & Styling
+
 - **Tailwind CSS v4**: Utility-first CSS framework
+- **Icons**: Lucide React
 
 ### State Management & Data Fetching
+
 - **Zustand**: Global client-side state management
 - **TanStack Query (React Query)**: Server state management and data fetching
 - **@tanstack/react-query-devtools**: Development tools for debugging queries
 
 ### Routing & Navigation
+
 - **React Router v7**: Modern routing solution with data loading capabilities
 
 ### Internationalization (i18n)
+
 - **i18next**: Internationalization framework
 - **react-i18next**: React bindings for i18next
 - **Supported Languages**: English (en), Arabic (ar)
 - **Features**: Language persistence via localStorage, RTL support
 
+### UI & UX
+
+- **Theme**: Light/Dark mode support (persisted via localStorage)
+- **Components**: Shared scalable UI components (Card, Button)
+- **Layout**: centralized Layout component with Header/Footer
+
 ### HTTP & API
+
 - **Axios**: Promise-based HTTP client
 
 ---
@@ -112,6 +128,7 @@ excellence/
 ## 🔄 Application Flow
 
 ### 1. Entry Point (`main.tsx`)
+
 ```
 User visits app → main.tsx renders:
   ├── React.StrictMode (development checks)
@@ -120,6 +137,7 @@ User visits app → main.tsx renders:
 ```
 
 ### 2. Providers Composition (`app/providers/AppProviders.tsx`)
+
 ```
 AppProviders wraps:
   ├── QueryProvider (TanStack Query)
@@ -127,6 +145,7 @@ AppProviders wraps:
 ```
 
 ### 3. Routing (`app/routes/index.tsx`)
+
 ```
 React Router v7 configuration:
 ├── Error boundary: ErrorPage
@@ -136,13 +155,15 @@ React Router v7 configuration:
 ```
 
 ### 4. Layout Structure
+
 All pages are wrapped in `Layout` component which typically includes:
-- Header with LanguageSwitcher
-- Sidebar navigation
+
+- Header with Logo, Navigation links, ThemeSwitcher, and LanguageSwitcher
 - Main content area
-- Footer
+- Footer with copyright info
 
 ### 5. Data Fetching Pattern (for future API integration)
+
 ```
 Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) → React Query → Axios → Backend
 ```
@@ -152,6 +173,7 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 ## 🎯 Key Features & Implementations
 
 ### Internationalization (i18n)
+
 - **Setup**: `shared/lib/i18n.ts`
 - **Translations**: `shared/locales/{en,ar}.json`
 - **Language Switcher**: `shared/components/global/LanguageSwitcher.tsx`
@@ -159,18 +181,21 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 - **RTL Support**: Automatic direction switching for Arabic
 
 ### State Management Strategy
+
 1. **Local State**: `useState` for component-specific UI state
 2. **Server State**: React Query for API data (caching, refetching)
 3. **Global Client State**: Zustand for app-wide state (e.g., UI store)
 
 ### Axios Configuration
+
 - **Base URL**: Configured via environment variables
-- **Interceptors**: 
+- **Interceptors**:
   - Response interceptor returns `response.data` directly
   - Error handling for failed requests
 - **Instance**: `apiClient` exported from `app/config/axios.ts`
 
 ### React Query Setup
+
 - **DevTools**: Enabled in development mode
 - **Configuration**: Custom query client in `app/config/queryClient.ts`
 
@@ -179,6 +204,7 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 ## 📋 Development Guidelines
 
 ### Adding a New Feature
+
 1. Create folder in `src/features/<feature-name>/`
 2. Structure:
    ```
@@ -193,17 +219,20 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 4. Add translations in `shared/locales/{en,ar}.json`
 
 ### Creating Shared Components
+
 - Place in `src/shared/components/`
 - Use TypeScript interfaces
 - Style with Tailwind CSS
 - Make them feature-agnostic
 
 ### API Integration (Future)
+
 1. Define API functions in `features/<feature>/api/`
 2. Create custom hooks using React Query
 3. Use the global `apiClient` from `app/config/axios.ts`
 
 ### Adding Translations
+
 1. Add keys to both `en.json` and `ar.json`
 2. Use `useTranslation` hook in components:
    ```tsx
@@ -212,18 +241,19 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
    ```
 
 ### Styling
+
 - Use the Tailwind color variables listed on `index.css` file.
 
 ---
 
 ## 📜 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server (port 5173) |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint for code quality |
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start development server (port 5173) |
+| `npm run build`   | Build for production                 |
+| `npm run preview` | Preview production build             |
+| `npm run lint`    | Run ESLint for code quality          |
 
 ---
 
@@ -238,6 +268,7 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 ## 🎨 UI
 
 ### Styling Approach
+
 - **Primary**: Tailwind utility classes
 - **Custom**: `index.css`
 
@@ -246,16 +277,19 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 ## 🔍 Important Configuration Files
 
 ### `vite.config.ts`
+
 - React plugin
 - Tailwind CSS plugin
 - Path alias: `@` → `./src`
 
 ### `tsconfig.json`
+
 - Strict mode enabled
 - Path mappings for clean imports
 - ES2020+ features
 
 ### `.env`
+
 - Environment variables (e.g., `VITE_API_BASE_URL`)
 - Access via `import.meta.env` in code
 
@@ -277,10 +311,10 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 ## Comments and Documentation
 
 - **Professional Only:** Write comments as if a Senior Engineer is leaving them for a Peer.
-- **No Hand-Holding:** Do NOT write comments like *"Check if this path is correct"* or *"Remember to install this."* Assume the reader is competent.
-- **Why > What:** Comment on *business logic* and *complexity*, not syntax.
-  - *Bad:* `// Sets user to null`
-  - *Good:* `// Resetting user state here prevents stale data on re-login.`
+- **No Hand-Holding:** Do NOT write comments like _"Check if this path is correct"_ or _"Remember to install this."_ Assume the reader is competent.
+- **Why > What:** Comment on _business logic_ and _complexity_, not syntax.
+  - _Bad:_ `// Sets user to null`
+  - _Good:_ `// Resetting user state here prevents stale data on re-login.`
 - Don't add too much comments. Just add comments when really needed to be noticed from other developers.
 
 ---
@@ -290,9 +324,9 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 - **Indentation:** Use **2 spaces**. No tabs.
 - **Semicolons:** Always use semicolons `;` at the end of statements.
 - **Quotes:**
-	- Use **Single Quotes** `'` for standard string literals in TS/JS.
-	- Use **Double Quotes** `"` for JSX attributes and JSON.
-	- Use **Backticks** `` ` `` for template literals/interpolation.
+  - Use **Single Quotes** `'` for standard string literals in TS/JS.
+  - Use **Double Quotes** `"` for JSX attributes and JSON.
+  - Use **Backticks** `` ` `` for template literals/interpolation.
 - **Trailing Commas:** Add trailing commas in objects, arrays, and function parameters (multiline) to minimize git diffs.
 - **Exports:** Prefer **Named Exports** (`export const Button = ...`) over Default Exports (`export default Button`) to ensure consistent naming across imports.
 - **Component Naming:** PascalCase (`UserProfile.tsx`).
@@ -303,6 +337,7 @@ Component → Custom Hook (features/*/hooks/) → API Call (features/*/api/) →
 ## 🤖 Quick Reference for Gemini
 
 When starting a new chat session, remember:
+
 - This is a **feature-based architecture** - each feature is self-contained
 - **Vite** is the bundler (fast dev server, HMR)
 - All paths use the `@/` alias pointing to `src/`

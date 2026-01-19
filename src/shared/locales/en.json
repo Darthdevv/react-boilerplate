@@ -3,10 +3,14 @@
     "error": "An error occurred",
     "errorDescription": "An unexpected error occurred. Please try again later",
     "notFound": "Page not found",
-    "backHome": "Back to Home"
+    "backHome": "Back to Home",
+    "switchLanguage": "Switch Language",
+    "switchToAr": "Switch to Arabic",
+    "switchToEn": "Switch to English",
+    "toggleTheme": "Toggle Theme"
   },
   "home": {
-    "title": "React Boilerplate",
+    "title": "Home",
     "description": "This is a modern React application built with Vite, TypeScript, and Tailwind CSS.\nClick below to view the Users list and verify data fetching.",
     "viewUsers": "View Users"
   },
@@ -16,5 +20,23 @@
     "error": "Failed to load users.",
     "name": "Name",
     "email": "Email"
+  },
+  "dashboard": {
+    "welcome": "Welcome Back!",
+    "subtitle": "Here is what is happening with your projects today.",
+    "activeUsers": "Active Users",
+    "revenue": "Revenue",
+    "bounceRate": "Bounce Rate",
+    "serverLoad": "Server Load",
+    "recentActivity": "Recent Activity",
+    "systemStatus": "System Status",
+    "cpuUsage": "CPU Usage",
+    "memoryUsage": "Memory Usage",
+    "storageUsage": "Disk Space",
+    "newUserJoined": "New User Joined",
+    "justNow": "Just now"
+  },
+  "footer": {
+    "rightsReserved": "All rights reserved"
   }
 }
